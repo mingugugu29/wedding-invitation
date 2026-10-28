@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>박준우 &amp; 이민지 결혼합니다</title>
+<meta name="description" content="박준우 · 이민지 결혼식에 초대합니다. 아젠토피오레 컨벤션, 오후 1시.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --card: #ffffff;
+    --ink: #2b2a28;
+    --muted: #7a756d;
+    --line: #e4ded4;
+    --accent: #4a5a3c;
+    --accent-soft: #eef0e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1b19; --card: #262522; --ink: #ece8e1; --muted: #a39d93;
+      --line: #3a3833; --accent: #a8b894; --accent-soft: #2f3329;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Gowun Batang", serif; line-height: 1.9;
+    -webkit-text-size-adjust: 100%;
+  }
+  .sheet {
+    max-width: 460px; margin: 0 auto; background: var(--card);
+    border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+    min-height: 100vh;
+  }
+  section { padding: 48px 28px; border-bottom: 1px solid var(--line); text-align: center; }
+  .script {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--muted); letter-spacing: .06em;
+  }
+  .eyebrow {
+    font-size: .78rem; letter-spacing: .22em; color: var(--accent);
+    text-transform: uppercase; margin-bottom: 18px;
+  }
+
+  /* 표지 */
+  .cover { padding-top: 64px; padding-bottom: 56px; }
+  .cover .script { font-size: 1.05rem; }
+  .cover .names {
+    font-size: clamp(1.7rem, 7vw, 2.3rem); font-weight: 700;
+    margin: 14px 0 6px; letter-spacing: .02em;
+  }
+  .cover .names .amp { color: var(--accent); font-weight: 400; margin: 0 .35em; }
+  .cover .when { color: var(--muted); font-size: .95rem; margin-top: 18px; }
+  .photo {
+    margin: 28px auto 0; aspect-ratio: 3 / 4; border-radius: 10px;
+    background: var(--accent-soft); border: 1px dashed var(--line);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); font-size: .85rem; line-height: 1.6;
+  }
+  .rule { width: 36px; height: 1px; background: var(--accent); margin: 0 auto; opacity: .5; }
+
+  /* 인사말 */
+  .greeting p { margin: 0 0 1.1em; font-size: .98rem; }
+  .greeting .parents {
+    margin-top: 28px; font-size: .92rem; color: var(--muted);
+    display: grid; gap: 6px;
+  }
+  .greeting .parents b { color: var(--ink); font-weight: 400; }
+
+  /* 일시 · 장소 */
+  dl.info { margin: 0; display: grid; gap: 20px; text-align: center; }
+  dl.info dt { font-size: .78rem; letter-spacing: .18em; color: var(--accent); }
+  dl.info dd { margin: 4px 0 0; font-size: 1.05rem; }
+  dl.info dd small { display: block; font-size: .86rem; color: var(--muted); margin-top: 2px; }
+  .placeholder { color: var(--muted); border-bottom: 1px dashed var(--muted); }
+
+  .btn {
+    display: inline-block; margin-top: 22px; padding: 11px 24px;
+    border: 1px solid var(--accent); border-radius: 999px;
+    color: var(--accent); text-decoration: none; font-size: .9rem;
+    background: transparent; cursor: pointer; font-family: inherit;
+  }
+  .btn:hover { background: var(--accent-soft); }
+  .btn-fill { background: var(--accent); color: var(--card); border-color: var(--accent); }
+  .btn-fill:hover { opacity: .88; background: var(--accent); }
+
+  /* 참석여부 */
+  .rsvp h2 { margin: 0 0 10px; font-size: 1.15rem; font-weight: 700; }
+  .rsvp .lead { font-size: .95rem; color: var(--muted); margin: 0 0 26px; }
+  form { display: grid; gap: 16px; text-align: left; }
+  .field { display: grid; gap: 6px; }
+  .field > span { font-size: .82rem; color: var(--muted); letter-spacing: .04em; }
+  input[type="text"], input[type="tel"], select, textarea {
+    width: 100%; padding: 11px 12px; font-family: inherit; font-size: .95rem;
+    color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 8px;
+  }
+  textarea { resize: vertical; min-height: 72px; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .choice { display: flex; gap: 10px; }
+  .choice label {
+    flex: 1; text-align: center; padding: 11px 0; font-size: .92rem;
+    border: 1px solid var(--line); border-radius: 8px; cursor: pointer;
+    position: relative;
+  }
+  .choice input { position: absolute; opacity: 0; pointer-events: none; }
+  .choice input:checked + span { color: var(--accent); font-weight: 700; }
+  .choice label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+  .done {
+    margin-top: 20px; padding: 14px; border-radius: 8px;
+    background: var(--accent-soft); color: var(--accent); font-size: .92rem;
+  }
+  [hidden] { display: none !important; }
+
+  /* 연락처 */
+  .contact { display: grid; gap: 12px; font-size: .95rem; }
+  .contact a { color: var(--accent); text-decoration: none; }
+  .contact .row { display: flex; justify-content: center; gap: 10px; align-items: baseline; }
+  .contact .who { color: var(--muted); font-size: .86rem; }
+
+  footer { text-align: center; padding: 36px 28px 56px; color: var(--muted); font-size: .82rem; }
+  .draft-note {
+    max-width: 460px; margin: 0 auto; padding: 14px 28px 40px;
+    font-size: .78rem; color: var(--muted); line-height: 1.8;
+  }
+  .draft-note b { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- 표지 -->
+  <section class="cover">
+    <div class="script">We are getting married</div>
+    <h1 class="names">박준우<span class="amp">&amp;</span>이민지</h1>
+    <div class="rule"></div>
+    <p class="when">
+      <span class="placeholder">2026년 ○월 ○일 ○요일</span><br>
+      오후 1시 · 아젠토피오레 컨벤션
+    </p>
+    <div class="photo">두 분의 사진이<br>들어갈 자리입니다</div>
+  </section>
+
+  <!-- 인사말 -->
+  <section class="greeting">
+    <div class="eyebrow">Invitation</div>
+    <p>서로가 마주 보며 다져온 사랑을<br>이제 함께 한 곳을 바라보며<br>걸어갈 수 있는 큰 사랑으로 키우고자 합니다.</p>
+    <p>저희 두 사람이 사랑의 이름으로 하나가 되는 날,<br>귀한 걸음으로 축복해 주시면<br>더없는 기쁨으로 간직하겠습니다.</p>
+    <div class="parents">
+      <div>박○○ · 김○○ 의 아들 <b>박준우</b></div>
+      <div>이○○ · 최○○ 의 딸 <b>이민지</b></div>
+    </div>
+  </section>
+
+  <!-- 일시 · 장소 -->
+  <section>
+    <div class="eyebrow">When &amp; Where</div>
+    <dl class="info">
+      <div>
+        <dt>DATE</dt>
+        <dd>
+          <span class="placeholder">2026년 ○월 ○일 ○요일</span>
+          <small>오후 1시</small>
+        </dd>
+      </div>
+      <div>
+        <dt>PLACE</dt>
+        <dd>
+          아젠토피오레 컨벤션
+          <small>층 · 홀 이름을 확인해 넣어주세요</small>
+        </dd>
+      </div>
+    </dl>
+    <a class="btn" href="https://naver.me/5UEFHTK6" target="_blank" rel="noopener">네이버 지도로 길찾기 →</a>
+  </section>
+
+  <!-- 참석여부 -->
+  <section class="rsvp">
+    <div class="eyebrow">R.S.V.P</div>
+    <h2>참석여부 전달</h2>
+    <p class="lead">축하의 마음으로 참석해 주시는 모든 분들을<br>정성껏 모실 수 있도록 미리 여쭙습니다.</p>
+
+    <form id="rsvpForm">
+      <div class="field">
+        <span>구분</span>
+        <div class="choice">
+          <label><input type="radio" name="side" value="신랑측" required><span>신랑측</span></label>
+          <label><input type="radio" name="side" value="신부측"><span>신부측</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <span>참석 여부</span>
+        <div class="choice">
+          <label><input type="radio" name="attend" value="참석" required><span>참석</span></label>
+          <label><input type="radio" name="attend" value="미참석"><span>미참석</span></label>
+        </div>
+      </div>
+
+      <label class="field">
+        <span>성명</span>
+        <input type="text" name="name" placeholder="홍길동" required>
+      </label>
+
+      <label class="field">
+        <span>연락처 (선택)</span>
+        <input type="tel" name="phone" placeholder="010-0000-0000" inputmode="tel">
+      </label>
+
+      <label class="field">
+        <span>총 참석 인원</span>
+        <select name="count">
+          <option>1명</option><option>2명</option><option>3명</option>
+          <option>4명</option><option>5명 이상</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>식사 여부</span>
+        <select name="meal">
+          <option>예식 후 식사 함께</option>
+          <option>식사 없이 참석</option>
+          <option>미정</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>전하실 말씀 (선택)</span>
+        <textarea name="message" placeholder="축하 메시지나 전달사항을 남겨주세요"></textarea>
+      </label>
+
+      <button class="btn btn-fill" type="submit">참석여부 전달하기</button>
+    </form>
+
+    <div class="done" id="rsvpDone" hidden>
+      소중한 마음 전해 주셔서 감사합니다.<br>
+      <small>※ 초안 단계입니다 — 지금은 제출 내용이 이 브라우저에만 저장됩니다.</small>
+    </div>
+  </section>
+
+  <!-- 연락처 -->
+  <section>
+    <div class="eyebrow">Contact</div>
+    <div class="contact">
+      <div class="row"><span class="who">신랑</span> <b>박준우</b> <a href="tel:01000000000">010-0000-0000</a></div>
+      <div class="row"><span class="who">신부</span> <b>이민지</b> <a href="tel:01000000000">010-0000-0000</a></div>
+    </div>
+  </section>
+
+  <footer>
+    박준우 &amp; 이민지<br>
+    <span class="script">Thank you for being part of our day</span>
+  </footer>
+</div>
+
+<p class="draft-note">
+  <b>초안 메모</b> — ① 예식 날짜 · 요일 미정(○ 표시된 곳) ② 혼주 성함과 신랑 · 신부 연락처, 홀 이름은 임시값
+  ③ 참석여부는 아직 저장만 되고 전송되지 않습니다(구글폼 · 시트 연동 필요) ④ 사진 자리는 비워둔 상태입니다.
+</p>
+
+<script>
+  var form = document.getElementById('rsvpForm');
+  var done = document.getElementById('rsvpDone');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = Object.fromEntries(new FormData(form).entries());
+    data.submittedAt = new Date().toISOString();
+
+    // 초안: 전송 엔드포인트가 없어 브라우저에만 보관합니다.
+    try {
+      var list = JSON.parse(localStorage.getItem('rsvp') || '[]');
+      list.push(data);
+      localStorage.setItem('rsvp', JSON.stringify(list));
+    } catch (err) {
+      console.warn('RSVP 저장 실패:', err);
+    }
+    console.log('RSVP', data);
+
+    form.hidden = true;
+    done.hidden = false;
+    done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+
+</body>
+</html>
