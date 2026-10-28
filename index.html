@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>청첩장 디자인 초안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --card: #ffffff;
+    --ink: #2b2a28;
+    --muted: #7a756d;
+    --line: #e4ded4;
+    --accent: #4a5a3c;
+    --tag-bg: #eef0e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1b19; --card: #262522; --ink: #ece8e1; --muted: #a39d93;
+      --line: #3a3833; --accent: #a8b894; --tag-bg: #2f3329;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Gowun Batang", serif; line-height: 1.7;
+  }
+  header { text-align: center; padding: 56px 16px 24px; }
+  header .script {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 1.1rem; color: var(--muted); letter-spacing: .04em;
+  }
+  header h1 { margin: 4px 0 8px; font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 700; }
+  header p { margin: 0; color: var(--muted); font-size: .95rem; }
+  main {
+    max-width: 1100px; margin: 0 auto; padding: 16px 16px 64px;
+    display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .draft {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .draft a.img { display: block; background: #ddd; aspect-ratio: 1 / 1; }
+  .draft img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .body { padding: 20px 20px 24px; flex: 1; display: flex; flex-direction: column; }
+  .label { font-size: .8rem; color: var(--accent); font-weight: 700; letter-spacing: .08em; }
+  .body h2 { margin: 2px 0 10px; font-size: 1.25rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tags span { background: var(--tag-bg); color: var(--accent); font-size: .78rem; padding: 2px 10px; border-radius: 999px; }
+  .body ul { margin: 0 0 16px; padding-left: 18px; font-size: .92rem; }
+  .body ul li::marker { color: var(--muted); }
+  .pc { font-size: .85rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; margin-top: auto; }
+  .pc b { color: var(--ink); }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 16px 48px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <div class="script">we're getting married</div>
+  <h1>청첩장 디자인 초안</h1>
+  <p>세 가지 시안을 비교하고 Issue에 의견을 남겨주세요</p>
+</header>
+
+<main>
+  <article class="draft">
+    <a class="img" href="designs/draft-a-film-photo.webp" target="_blank"><img src="designs/draft-a-film-photo.webp" alt="시안 A: 필름 사진 + 화이트 카드"></a>
+    <div class="body">
+      <div class="label">DRAFT A</div>
+      <h2>필름 포토 · 미니멀 화이트</h2>
+      <div class="tags"><span>모던</span><span>캐주얼</span><span>2단 카드</span></div>
+      <ul>
+        <li>앞면: 웨딩 사진 + 손글씨 영문 타이틀</li>
+        <li>뒷면: 초대 문구, 일시·장소를 작은 글씨로 정리</li>
+        <li>흰 여백이 많아 깔끔하고 세련된 인상</li>
+      </ul>
+      <div class="pc"><b>장점</b> 사진이 돋보임 · <b>고민</b> 글씨가 작아 어르신 가독성</div>
+    </div>
+  </article>
+
+  <article class="draft">
+    <a class="img" href="designs/draft-b-hanok-monotone.webp" target="_blank"><img src="designs/draft-b-hanok-monotone.webp" alt="시안 B: 한옥 담장 흑백 사진"></a>
+    <div class="body">
+      <div class="label">DRAFT B</div>
+      <h2>한옥 담장 · 흑백 포스터</h2>
+      <div class="tags"><span>클래식</span><span>한국적</span><span>포스터형</span></div>
+      <ul>
+        <li>전면 흑백 사진 위에 "저희, 결혼합니다." 큰 타이틀</li>
+        <li>신랑·신부 이름을 세로로 양쪽에 배치</li>
+        <li>날짜를 크게 강조해 한눈에 들어옴</li>
+      </ul>
+      <div class="pc"><b>장점</b> 임팩트·분위기 · <b>고민</b> 상세 정보 공간 부족</div>
+    </div>
+  </article>
+
+  <article class="draft">
+    <a class="img" href="designs/draft-c-green-calendar.webp" target="_blank"><img src="designs/draft-c-green-calendar.webp" alt="시안 C: 그린 컬러 + 달력"></a>
+    <div class="body">
+      <div class="label">DRAFT C</div>
+      <h2>그린 캘린더 · 폴딩 카드</h2>
+      <div class="tags"><span>내추럴</span><span>정보형</span><span>접이식</span></div>
+      <ul>
+        <li>올리브 그린 커버 + 야외 웨딩 사진</li>
+        <li>달력에 예식일 하트 표시</li>
+        <li>안쪽에 지도·QR코드·연락처까지 포함</li>
+      </ul>
+      <div class="pc"><b>장점</b> 정보 전달력 최고 · <b>고민</b> 인쇄 단가·제작 난이도</div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  의견은 저장소의 <b>Issues → New issue → 디자인 피드백</b> 템플릿으로 남겨주세요.
+</footer>
+</body>
+</html>
